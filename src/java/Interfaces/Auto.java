@@ -14,11 +14,6 @@ public abstract class Auto {
     
     public abstract int getCategoria();
     
-    public double generarNuevaLlegadaAuto(){
-        double x=-2*Math.log(1-Math.random());
-        return x;
-    }
-    
     public abstract double tiempoAtencion(double RND);
     
     public abstract int costoPeaje();

@@ -6,6 +6,7 @@
 package Dominio;
 
 import Interfaces.Auto;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,14 +14,42 @@ import Interfaces.Auto;
  */
 public class Cabina {
     
-    private int cola;
+    
     private String estado;
-    
-    
-    
-    
-    public double tiempoAtencion(Auto auto, double RND){
-        return auto.tiempoAtencion(RND);
+    private ArrayList<Auto> colaAutos;
+
+    public Cabina() {
+        this.colaAutos = new ArrayList<>();
+        this.estado = "LIBRE";
     }
+
+    
+    
+    public boolean estaDisponible(){
+        return colaAutos.size()<4;
+    }
+    
+    public boolean estaLleno(){
+        return colaAutos.size()==4;
+    }
+    
+    public boolean estaVacio(){
+        return colaAutos.isEmpty();
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void añadirAuto(Auto auto) {
+        colaAutos.add(auto);
+        if (this.colaAutos.size()==4){
+            this.estado="LLENO";
+        }
+    }
+    
+    
+    
+    
     
 }
