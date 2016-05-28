@@ -16,7 +16,27 @@ public abstract class Auto {
     
     public abstract double tiempoAtencion(double RND);
     
+    public abstract double getTiempoAtencion();
+    
     public abstract int costoPeaje();
+    
+    public abstract void atender();
+    
+    public abstract void esperar();
+    
+    public abstract String getEstado();
+    
+    public abstract void setEstado(String estado);
+    
+    public abstract void setTiempoAtencion(double tiempo);
+    
+    
+
+    @Override
+    public String toString(){
+        return "\nCategoria=" + getCategoria() + ", estado: "+getEstado();
+    }
+    
     
     
 }

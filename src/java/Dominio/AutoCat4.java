@@ -11,7 +11,33 @@ import Interfaces.Auto;
  *
  * @author jorge
  */
-public class AutoCat4 extends Auto{
+public class AutoCat4 extends Auto {
+
+    private double tiempoAtencion;
+    private String estado;
+
+    @Override
+    public void atender() {
+        estado = "SIENDO ATENDIDO";
+    }
+    @Override
+    public void setTiempoAtencion(double tiempoAtencion) {
+        this.tiempoAtencion = tiempoAtencion;
+    }
+    @Override
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public void esperar() {
+        estado = "ESPERANDO ATENCION";
+    }
+
+    @Override
+    public String getEstado() {
+        return estado;
+    }
 
     @Override
     public int getCategoria() {
@@ -20,12 +46,18 @@ public class AutoCat4 extends Auto{
 
     @Override
     public double tiempoAtencion(double RND) {
-    return RND*40+90;
+        tiempoAtencion=RND * 40 + 90;
+        return tiempoAtencion;
     }
 
     @Override
     public int costoPeaje() {
-       return 9;
+        return 9;
     }
-    
+
+    @Override
+    public double getTiempoAtencion() {
+        return tiempoAtencion;
+    }
+
 }

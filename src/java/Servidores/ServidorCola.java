@@ -5,8 +5,13 @@
  */
 package Servidores;
 
+
+import Cola.VectorAux;
+import Gestores.GestorCola;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,20 +36,23 @@ public class ServidorCola extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServidorCola</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServidorCola at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        double tiempo= Integer.parseInt(request.getParameter("tiempoSimulacion"));
+        GestorCola gc = new GestorCola(tiempo);
+        gc.comenzarSimulacion();
+        ArrayList<VectorAux> mostrar= gc.getVectorEstadoaux();
+        int maximoTam= gc.getMaximaCantidadAutos();
+        int montoTotal=gc.getMontoToal();
+        int numeroCabinas= gc.getNumeroMaxCabina();
+        
+        request.setAttribute("cabinas", numeroCabinas);
+        request.setAttribute("monto", montoTotal);
+        request.setAttribute("tiempo", tiempo);
+        request.setAttribute("vectorEstadoAux", mostrar);
+        request.setAttribute("maximoTam", maximoTam);
+        request.getRequestDispatcher("mostrar.jsp").forward(request, response);
         }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
