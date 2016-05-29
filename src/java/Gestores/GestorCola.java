@@ -118,7 +118,8 @@ public class GestorCola {
             Auto aut = null;
             vec.nuevaLlegadaAuto();
             aut = vectorEstado[1].getAuto();
-
+            //PARA QUE MIERDA ES ESTA VALIDACION
+            //COMENTA ALGO HIJO DE MIL
             if (aut != null) {
 
                 vec.setTiempoFinAtencion(vectorEstado[1].getTiempoFinAtencion());
@@ -132,6 +133,7 @@ public class GestorCola {
                 vec.setTiempoFinAtencion(vectorEstado[1].getTiempoFinAtencion());
                 aut = vec.getAuto();
                 asignarACabina(aut, vec);
+                //ACA HAY QUE SABER A QUE CABINA LE SACAS EL AUTO
                 vec.menorTiempo();
 
                 autos.add(aut);
@@ -155,7 +157,7 @@ public class GestorCola {
 //EVENTO 2--------------------------
         //-------------------------------------------------------------------------------
         if (vectorEstado[1].getSiguienteEvento() == 2) {
-
+            
             Auto aut = liberarCabina();
 
             montoToal += autos.remove(0).costoPeaje();

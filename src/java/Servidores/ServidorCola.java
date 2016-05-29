@@ -43,11 +43,13 @@ public class ServidorCola extends HttpServlet {
         gc.comenzarSimulacion();
         ArrayList<VectorAux> mostrar= gc.getVectorEstadoaux();
         //LO MUESTRO POR CONSOLA, PARA CORROBORAR MEJOR
-//        for (Iterator<VectorAux> iterator = mostrar.iterator(); iterator.hasNext();) {
-//            VectorAux next = iterator.next();
-//            System.out.println("===================================================");  
-//            System.out.println(next.toString());            
-//        }
+        int numeroLinea=0;
+        for (Iterator<VectorAux> iterator = mostrar.iterator(); iterator.hasNext();) {
+            VectorAux next = iterator.next();
+            System.out.println("Linea "+ numeroLinea + " ===================================================");  
+            System.out.println(next.toString());
+            numeroLinea++;
+        }
         int maximoTam= gc.getMaximaCantidadAutos();
         int montoTotal=gc.getMontoToal();
         int numeroCabinas= gc.getNumeroMaxCabina();

@@ -216,14 +216,14 @@ public class VectorEstado {
     public String toString() {
         return "\n--------------------------------\n"
                 + " Vector Estado A Añadir{"
-                + "\ntiempoActual=" + tiempoActual
-                + ",\n tiempoProximaLlegada=" + tiempoProximaLlegada
-                + ",\n tiempoEntreLlegada=" + tiempoEntreLlegada
-                + ",\n tiempoDemoraAtencion=" + tiempoFinAtencion
-                + ",\n rndLlegadaAuto=" + rndLlegadaAuto
-                + ",\n rndCatAuto=" + rndCatAuto
-                + ",\n rndAtencion=" + rndAtencion
-                + ",\n siguienteEvento=" + siguienteEvento;
+                + " \n tiempoActual=" + tiempoActual
+                + " \n tiempoProximaLlegada=" + tiempoProximaLlegada
+                + " \n tiempoEntreLlegada=" + tiempoEntreLlegada
+                + " \n tiempoDemoraAtencion=" + tiempoFinAtencion
+                + " \n rndLlegadaAuto=" + rndLlegadaAuto
+                + " \n rndCatAuto=" + rndCatAuto
+                + " \n rndAtencion=" + rndAtencion
+                + " \n siguienteEvento=" + siguienteEvento;
 
     }
 
