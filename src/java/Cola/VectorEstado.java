@@ -44,7 +44,7 @@ public class VectorEstado {
         do {
             rndLlegadaAuto = Math.random();
         } while (rndLlegadaAuto == 0d);
-        tiempoEntreLlegada = -180 * Math.log(1 - rndLlegadaAuto);
+        tiempoEntreLlegada = -50 * Math.log(1 - rndLlegadaAuto);
 
         tiempoProximaLlegada = tiempoActual + tiempoEntreLlegada;
         generarCatAuto();
